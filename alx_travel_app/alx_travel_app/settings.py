@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path # Modern OS safe way to handle filesystem paths
 import os
 import environ
-from decouple import config 
+from decouple import config
+
 
 # Initializing django environment
 env = environ.Env(
@@ -33,7 +34,6 @@ environ.Env.read_env(os.path.join(BASE_DIR,'.env'))
 SECRET_KEY = env('SECRET_KEY')
 
 # Chapa API configuration
-
 CHAPA_SECRET_KEY = config('CHAPA_SECRET_KEY')
 CHAPA_PUBLIC_KEY = config('CHAPA_PUBLIC_KEY')
 CHAPA_BASE_URL = config('CHAPA_BASE_URL')
